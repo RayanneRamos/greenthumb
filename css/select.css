@@ -1,0 +1,87 @@
+main {
+  width: 100%;
+  height: 300px;
+}
+
+.selects {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-left: 293px;
+  padding-right: 293px;
+}
+
+.first-select img {
+  margin-top: 57px;
+}
+
+.first-select p {
+  margin-top: 6px;
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  color: #848484;
+}
+
+.first-select select {
+  margin-top: 24px;
+  width: 219px;
+  height: 40px;
+  border-radius: 19px;
+  border: 1px solid #a8a8a8;
+}
+
+.second-select {
+  padding-left: 97px;
+}
+
+.second-select img {
+  margin-top: 47px;
+}
+
+.second-select p {
+  margin-top: 15px;
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  color: #797979;
+}
+
+.second-select select {
+  margin-top: 24px;
+  width: 219px;
+  height: 40px;
+  border-radius: 19px;
+  border: 1px solid #a8a8a8;
+}
+
+.third-select {
+  padding-left: 103px;
+}
+
+.third-select img {
+  margin-top: 61px;
+}
+
+.third-select p {
+  margin-top: 15px;
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 22px;
+  color: #848484;
+}
+
+.third-select select {
+  margin-top: 24px;
+  width: 219px;
+  height: 40px;
+  border-radius: 19px;
+  border: 1px solid #a8a8a8;
+}
