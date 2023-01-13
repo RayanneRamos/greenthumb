@@ -1,0 +1,28 @@
+header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 500px;
+  background-image: url('../assets/images/banner.png');
+  background-color: #75bc97;
+}
+
+.logo {
+  margin-top: 57px;
+  padding-left: 288px;
+}
+
+h1 {
+  color: #fff;
+  margin-top: 42px;
+  padding-left: 288px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 70px;
+  line-height: 85px;
+}
+
+.icon {
+  margin-top: 31px;
+  padding-left: 291px;
+}
