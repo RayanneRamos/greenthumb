@@ -85,3 +85,21 @@ main {
   border-radius: 19px;
   border: 1px solid #a8a8a8;
 }
+
+@media screen and (max-width: 768px) {
+  .selects {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+  }
+
+  .second-select {
+    margin-right: 75px;
+  }
+
+  .third-select {
+    margin-right: 75px;
+  }
+}
