@@ -19,7 +19,7 @@
   margin-top: 37px;
 }
 
-.results-cards h1 {
+.results-cards > h1 {
   margin-left: 240px;
   margin-top: 20px;
   font-style: normal;
@@ -30,9 +30,18 @@
 }
 
 .cards {
+  margin-left: 530px;
+  margin-top: 33px;
+}
+
+.list-products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  padding: 33px 270px 0 530px;
+  list-style: none;
+}
+
+li {
+  column-gap: 30px;
 }
 
 .cards-elements  {
