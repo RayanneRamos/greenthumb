@@ -5,26 +5,31 @@ header {
   height: 500px;
   background-image: url('../assets/images/banner.png');
   background-color: #75bc97;
+  background-position: center;
 }
 
 .logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 57px;
-  padding-left: 288px;
+  padding-left: 520px;
 }
 
-h1 {
+.title {
   color: #fff;
   margin-top: 42px;
-  padding-left: 288px;
+  padding-left: 520px;
   font-style: normal;
   font-weight: 700;
   font-size: 70px;
   line-height: 85px;
+  word-break: break-word;
 }
 
 .icon {
   margin-top: 31px;
-  padding-left: 291px;
+  padding-left: 520px;
 }
 
 @media screen and (max-width: 768px) {
@@ -43,7 +48,7 @@ h1 {
     margin-top: 36px;
   }
 
-  h1 {
+  .title {
     padding-left: 34px;
     margin-top: 31px;
     font-weight: 700;

@@ -14,7 +14,8 @@ footer {
   padding-left: 250px;
 }
 
-.info h1 {
+.info-title {
+  padding-left: 280px;
   margin-top: 74px;
   font-style: normal;
   font-weight: 700;
@@ -26,7 +27,7 @@ footer {
 .info p {
   width: 219px;
   height: 81px;
-  margin-left: 290px;
+  margin-left: 285px;
   margin-top: 13px;
   font-style: normal;
   font-weight: 400;
@@ -57,9 +58,9 @@ footer {
     margin: 0;
   }
 
-  .info h1 {
-    margin-left: 35px;
-    margin-top: 47px;
+  .info-title {
+    margin-top: 37px;
+    padding-left: 65px;
   }
 
   .info p {

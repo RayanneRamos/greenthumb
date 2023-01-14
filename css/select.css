@@ -17,12 +17,15 @@ main {
 }
 
 .first-select p {
+  width: 219px;
+  height: 44px;
   margin-top: 6px;
   margin-left: 10px;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 22px;
+  word-break: break-word;
   color: #848484;
 }
 
@@ -43,12 +46,15 @@ main {
 }
 
 .second-select p {
+  width: 203px;
+  height: 44px;
   margin-top: 15px;
   margin-left: 10px;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 22px;
+  word-break: break-word;
   color: #797979;
 }
 
@@ -69,12 +75,15 @@ main {
 }
 
 .third-select p {
+  width: 190px;
+  height: 44px;
   margin-top: 15px;
   margin-left: 10px;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 22px;
+  word-break: break-word;
   color: #848484;
 }
 
@@ -90,16 +99,19 @@ main {
   .selects {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
     padding: 0;
     margin: 0;
   }
 
+  .first-select {
+    margin-right: 180px;
+  }
+
   .second-select {
-    margin-right: 75px;
+    margin-right: 270px;
   }
 
   .third-select {
-    margin-right: 75px;
+    margin-right: 270px;
   }
 }
