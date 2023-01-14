@@ -104,14 +104,17 @@ main {
   }
 
   .first-select {
+    margin-left: 180px;
     margin-right: 180px;
   }
 
   .second-select {
+    margin-left: 170px;
     margin-right: 270px;
   }
 
   .third-select {
+    margin-left: 170px;
     margin-right: 270px;
   }
 }
