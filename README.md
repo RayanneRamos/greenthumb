@@ -45,7 +45,7 @@ Você pode visualizar o layout do projeto através:
   - [Styleguide](https://www.figma.com/file/rA9ydy2sGCAjv6lKF1GzIm/UpNext-FrontEnd-Test?node-id=0%3A526)
 
 ## 🔥 Desafios
-  - [ ] Responsividade
+  - [x] Responsividade
   - [ ] Fazer os selects de buscas funcionarem
   - [x] Desktop
 
