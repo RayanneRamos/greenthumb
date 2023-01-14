@@ -77,3 +77,42 @@
   line-height: 28px;
   color: #257556;
 }
+
+@media screen and (max-width: 768px) {
+  .results {
+    display: flex;
+    flex-direction: column;
+    width: 316px;
+    height: 2500px;
+  }
+
+  .results-cards {
+    padding: 0;
+    margin: 0;
+  }
+
+  .pick {
+    margin: 0;
+    margin-left: 48px;
+    margin-top: 32px;
+  }
+
+  .results-title {
+    margin: 0;
+    width: 243px;
+    height: 98px;
+    margin-left: 48px;
+    margin-top: 16px;
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    margin-left: 48px;
+    margin-right: 21px;
+    column-gap: 32px;
+  }
+}
