@@ -19,8 +19,8 @@
   margin-top: 37px;
 }
 
-.results-cards > h1 {
-  margin-left: 240px;
+.results-title {
+  margin-left: 530px;
   margin-top: 20px;
   font-style: normal;
   font-weight: 700;
@@ -32,16 +32,15 @@
 .cards {
   margin-left: 530px;
   margin-top: 33px;
+  margin-right: 400px;
 }
 
 .list-products {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  flex-direction: row;
+  column-gap: 25px;
   list-style: none;
-}
-
-li {
-  column-gap: 30px;
+  flex-wrap: wrap;
 }
 
 .cards-elements  {
