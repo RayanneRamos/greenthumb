@@ -4,47 +4,43 @@ let selectPets = document.querySelector('.third-select');
 let valueSelectSun;
 let valueSelectWateringcan;
 let valueSelectPets;
-let plants = [];
-let resultsCards = document.querySelector('.results-cards');
-let noResults = document.querySelector('.no-results');
-let searchResults = document.querySelector('.results')
 
 init();
 
-fetch('../plants.json').then(response => response.json()).then(data => {
-  plants = data;
-  console.log(plants);
+function searchValues() {
+  fetch('../plants.json').then(response => response.json()).then(data => {
+    let plants = data;
+    
+    const plantsFilteredPets = plants.filter((p) => p.toxicity === valueSelectPets);
+    const plantsFilteredSun = plants.filter((s) => s.sun === valueSelectSun);
+    const plantsFilteredWater = plants.filter((w) => w.water === valueSelectWateringcan);
 
-  const plantData = {
-    id: data.id,
-    title: data.name,
-    sun: data.sun,
-    wateringcan: data.water,
-    image: data.url,
-    price: data.price,
-    pets: data.toxicity,
-  }
+    console.log(plantsFilteredPets);
+    console.log(plantsFilteredWater);
+    console.log(plantsFilteredSun);
 
-  plants.push(plantData);
-  return plantData;
-});
+  });
+}
 
 selectSun.addEventListener('change', (event) => {
   valueSelectSun = event.target.value;
   console.log(valueSelectSun);
   showAndHideDisplay();
+  searchValues();
 });
 
 selectWateringcan.addEventListener('change', (event) => {
   valueSelectWateringcan = event.target.value;
   console.log(valueSelectWateringcan);
   showAndHideDisplay();
+  searchValues();
 });
 
 selectPets.addEventListener('change', (event) => {
   valueSelectPets = event.target.value;
   console.log(valueSelectPets);
   showAndHideDisplay();
+  searchValues();
 });
 
 function init() {
@@ -106,4 +102,27 @@ function showAndHideDisplay() {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
   }
+}
+
+function createElement() {
+  const listProducts = document.querySelector('.list-products');
+
+  const products = document.createElement('li');
+  products.classList.add('products');
+  listProducts.appendChild(products);
+
+  const cardsElement = document.createElement('div');
+  cardsElement.classList.add('cards-elements');
+  products.appendChild(cardsElement);
+
+  const cardImage = document.createElement('img');
+  cardImage.classList.add('card-image');
+  const cardName = document.createElement('span');
+  cardName.classList.add('product-name');
+  const cardPrice = document.createElement('span');
+  cardPrice.classList.add('price');
+
+  cardsElement.appendChild(cardImage);
+  cardsElement.appendChild(cardName);
+  cardsElement.appendChild(cardPrice);
 }
