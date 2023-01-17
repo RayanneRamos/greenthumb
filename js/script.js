@@ -7,40 +7,28 @@ let valueSelectPets;
 
 init();
 
-function searchValues() {
-  fetch('../plants.json').then(response => response.json()).then(data => {
-    let plants = data;
-    
-    const plantsFilteredPets = plants.filter((p) => p.toxicity === valueSelectPets);
-    const plantsFilteredSun = plants.filter((s) => s.sun === valueSelectSun);
-    const plantsFilteredWater = plants.filter((w) => w.water === valueSelectWateringcan);
-
-    console.log(plantsFilteredPets);
-    console.log(plantsFilteredWater);
-    console.log(plantsFilteredSun);
-
-  });
-}
-
 selectSun.addEventListener('change', (event) => {
   valueSelectSun = event.target.value;
   console.log(valueSelectSun);
   showAndHideDisplay();
-  searchValues();
+  apiConnect();
+  setTimeout();
 });
 
 selectWateringcan.addEventListener('change', (event) => {
   valueSelectWateringcan = event.target.value;
   console.log(valueSelectWateringcan);
   showAndHideDisplay();
-  searchValues();
+  apiConnect();
+  setTimeout();
 });
 
 selectPets.addEventListener('change', (event) => {
   valueSelectPets = event.target.value;
   console.log(valueSelectPets);
   showAndHideDisplay();
-  searchValues();
+  apiConnect();
+  setTimeout();
 });
 
 function init() {
@@ -104,25 +92,109 @@ function showAndHideDisplay() {
   }
 }
 
-function createElement() {
-  const listProducts = document.querySelector('.list-products');
+function apiConnect() {
+  fetch('../plants.json').then(response => response.json()).then((data) => {
+    data.map((item) => {
+      const plantData = {
+        id: item.id,
+        name: item.name,
+        sun: item.sun,
+        water: item.water,
+        pets: item.toxicity,
+        image: item.url,
+        price: item.price,
+      }
 
-  const products = document.createElement('li');
-  products.classList.add('products');
-  listProducts.appendChild(products);
+      if(valueSelectSun === plantData.sun) {
+        const listProducts = document.querySelector('.list-products');
 
-  const cardsElement = document.createElement('div');
-  cardsElement.classList.add('cards-elements');
-  products.appendChild(cardsElement);
+        const products = document.createElement('li');
+        listProducts.appendChild(products);
+        products.classList.add('products');
 
-  const cardImage = document.createElement('img');
-  cardImage.classList.add('card-image');
-  const cardName = document.createElement('span');
-  cardName.classList.add('product-name');
-  const cardPrice = document.createElement('span');
-  cardPrice.classList.add('price');
+        const cardsElement = document.createElement('div');
+        products.appendChild(cardsElement);
+        cardsElement.classList.add('cards-elements');
 
-  cardsElement.appendChild(cardImage);
-  cardsElement.appendChild(cardName);
-  cardsElement.appendChild(cardPrice);
+        const cardImage = document.createElement('img');
+        cardImage.classList.add('card-image');
+        cardImage.innerHTML = `<img src=${plantData.image} alt=${plantData.name} />`;
+
+        const cardName = document.createElement('span');
+        cardName.classList.add('product-name');
+        cardName.innerHTML = `<span>${plantData.name}</span>`
+
+        const cardPrice = document.createElement('span');
+        cardPrice.classList.add('price');
+        cardPrice.innerHTML = `<span>${plantData.price}</span>`;
+
+        cardsElement.appendChild(cardImage);
+        cardsElement.appendChild(cardName);
+        cardsElement.appendChild(cardPrice);
+      }
+
+      if(valueSelectWateringcan === plantData.water) {
+        const listProducts = document.querySelector('.list-products');
+
+        const products = document.createElement('li');
+        listProducts.appendChild(products);
+        products.classList.add('products');
+
+        const cardsElement = document.createElement('div');
+        products.appendChild(cardsElement);
+        cardsElement.classList.add('cards-elements');
+
+        const cardImage = document.createElement('img');
+        cardImage.classList.add('card-image');
+        cardImage.innerHTML = `<img src=${plantData.image} alt=${plantData.name} />`;
+
+        const cardName = document.createElement('span');
+        cardName.classList.add('product-name');
+        cardName.innerHTML = `<span>${plantData.name}</span>`
+
+        const cardPrice = document.createElement('span');
+        cardPrice.classList.add('price');
+        cardPrice.innerHTML = `<span>${plantData.price}</span>`;
+
+        cardsElement.appendChild(cardImage);
+        cardsElement.appendChild(cardName);
+        cardsElement.appendChild(cardPrice);
+      }
+
+      if(valueSelectPets === plantData.pets) {
+        const listProducts = document.querySelector('.list-products');
+
+        const products = document.createElement('li');
+        listProducts.appendChild(products);
+        products.classList.add('products');
+
+        const cardsElement = document.createElement('div');
+        products.appendChild(cardsElement);
+        cardsElement.classList.add('cards-elements');
+
+        const cardImage = document.createElement('img');
+        cardImage.classList.add('card-image');
+        cardImage.innerHTML = `<img src=${plantData.image} alt=${plantData.name} />`;
+
+        const cardName = document.createElement('span');
+        cardName.classList.add('product-name');
+        cardName.innerHTML = `<span>${plantData.name}</span>`
+
+        const cardPrice = document.createElement('span');
+        cardPrice.classList.add('price');
+        cardPrice.innerHTML = `<span>${plantData.price}</span>`;
+
+        cardsElement.appendChild(cardImage);
+        cardsElement.appendChild(cardName);
+        cardsElement.appendChild(cardPrice);
+      }
+    });
+  });
 }
+
+
+setTimeout(() => {
+  selectSun = 'Select...';
+  selectWateringcan = 'Select...';
+  selectPets = 'Select...';
+}, 5000);
