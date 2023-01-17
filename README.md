@@ -46,7 +46,7 @@ Você pode visualizar o layout do projeto através:
 
 ## 🔥 Desafios
   - [x] Responsividade
-  - [ ] Fazer os selects de buscas funcionarem
+  - [x] Fazer os selects de buscas funcionarem
   - [x] Desktop
 
 ## 📝 License

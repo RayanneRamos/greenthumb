@@ -12,7 +12,6 @@ selectSun.addEventListener('change', (event) => {
   console.log(valueSelectSun);
   showAndHideDisplay();
   apiConnect();
-  setTimeout();
 });
 
 selectWateringcan.addEventListener('change', (event) => {
@@ -20,7 +19,6 @@ selectWateringcan.addEventListener('change', (event) => {
   console.log(valueSelectWateringcan);
   showAndHideDisplay();
   apiConnect();
-  setTimeout();
 });
 
 selectPets.addEventListener('change', (event) => {
@@ -28,7 +26,6 @@ selectPets.addEventListener('change', (event) => {
   console.log(valueSelectPets);
   showAndHideDisplay();
   apiConnect();
-  setTimeout();
 });
 
 function init() {
@@ -191,10 +188,3 @@ function apiConnect() {
     });
   });
 }
-
-
-setTimeout(() => {
-  selectSun = 'Select...';
-  selectWateringcan = 'Select...';
-  selectPets = 'Select...';
-}, 5000);
