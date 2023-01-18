@@ -146,7 +146,7 @@ function showAndHideDisplay() {
 
 function apiConnect() {
   fetch('../plants.json').then(response => response.json()).then((data) => {
-    data.map((item) => {
+    data.map((item, key) => {
       const plantData = {
         id: item.id,
         name: item.name,
@@ -161,8 +161,9 @@ function apiConnect() {
         const listProducts = document.querySelector('.list-products');
 
         const products = document.createElement('li');
-        listProducts.appendChild(products);
         products.classList.add('products');
+        products.innerHTML = `<li key=${plantData.id}></li>`;
+        listProducts.appendChild(products);
 
         const cardsElement = document.createElement('div');
         products.appendChild(cardsElement);
@@ -178,7 +179,7 @@ function apiConnect() {
 
         const cardPrice = document.createElement('span');
         cardPrice.classList.add('price');
-        cardPrice.innerHTML = `<span>${plantData.price}</span>`;
+        cardPrice.innerHTML = `<span>$${plantData.price}</span>`;
 
         cardsElement.appendChild(cardImage);
         cardsElement.appendChild(cardName);
