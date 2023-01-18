@@ -4,6 +4,9 @@ let selectPets = document.querySelector('.third-select');
 let valueSelectSun;
 let valueSelectWateringcan;
 let valueSelectPets;
+let resetSelectSun = document.querySelector('#select-sun')
+let resetSelectWateringcan = document.querySelector('#select-wateringcan');
+let resetSelectPets = document.querySelector('#select-pets');
 
 init();
 
@@ -12,6 +15,10 @@ selectSun.addEventListener('change', (event) => {
   console.log(valueSelectSun);
   showAndHideDisplay();
   apiConnect();
+
+  setTimeout(() => {
+    resetSelectSun.value = '';
+  }, 3000);
 });
 
 selectWateringcan.addEventListener('change', (event) => {
@@ -19,6 +26,10 @@ selectWateringcan.addEventListener('change', (event) => {
   console.log(valueSelectWateringcan);
   showAndHideDisplay();
   apiConnect();
+
+  setTimeout(() => {
+    resetSelectWateringcan.value = '';
+  }, 3000);
 });
 
 selectPets.addEventListener('change', (event) => {
@@ -26,6 +37,10 @@ selectPets.addEventListener('change', (event) => {
   console.log(valueSelectPets);
   showAndHideDisplay();
   apiConnect();
+
+  setTimeout(() => {
+    resetSelectPets.value = '';
+  }, 3000)
 });
 
 function init() {
@@ -41,16 +56,31 @@ function showAndHideDisplay() {
   if(valueSelectSun === 'no') {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.results').style.display = 'none';
+      document.querySelector('footer').style.display = 'block';
+    }, 10000);
   }
 
   if(valueSelectSun === 'low') {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.results').style.display = 'none';
+      document.querySelector('footer').style.display = 'block';
+    }, 10000);
   }
 
   if(valueSelectSun === 'high') {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.results').style.display = 'none';
+      document.querySelector('footer').style.display = 'block';
+    }, 10000);
   }
 
   if(valueSelectWateringcan === 'Select...') {
@@ -61,16 +91,31 @@ function showAndHideDisplay() {
   if(valueSelectWateringcan === 'regularly') {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.results').style.display = 'none';
+      document.querySelector('footer').style.display = 'block';
+    }, 10000);
   }
 
   if(valueSelectWateringcan === 'daily') {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.results').style.display = 'none';
+      document.querySelector('footer').style.display = 'block';
+    }, 10000);
   }
 
   if(valueSelectWateringcan === 'rarely') {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.results').style.display = 'none';
+      document.querySelector('footer').style.display = 'block';
+    }, 10000);
   }
 
   if(valueSelectPets === 'Select...') {
@@ -81,11 +126,21 @@ function showAndHideDisplay() {
   if(valueSelectPets === 'true') {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.results').style.display = 'none';
+      document.querySelector('footer').style.display = 'block';
+    }, 10000);
   }
 
   if(valueSelectPets === 'false') {
     document.querySelector('footer').style.display = 'none';
     document.querySelector('.results').style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelector('.results').style.display = 'none';
+      document.querySelector('footer').style.display = 'block';
+    }, 10000);
   }
 }
 
