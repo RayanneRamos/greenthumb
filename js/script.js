@@ -102,6 +102,7 @@ selectWateringcan.addEventListener("change", (event) => {
   valueSelectWateringcan = event.target.value;
   console.log(valueSelectWateringcan);
   //showAndHideDisplay();
+  filterSelectWateringcan();
 });
 
 selectPets.addEventListener("change", (event) => {
@@ -182,4 +183,38 @@ function filterSelectSun() {
     });
 
   return filteredSelectSun;
+}
+
+function filterSelectWateringcan() {
+  const filteredSelectWateringcan = plantsOfAvailable
+    .filter((w) => w.water === valueSelectWateringcan)
+    .map((plant) => {
+      const listProducts = document.querySelector(".list-products");
+
+      const products = document.createElement("li");
+      listProducts.appendChild(products);
+      products.classList.add("products");
+
+      const cardsElement = document.createElement("div");
+      products.appendChild(cardsElement);
+      cardsElement.classList.add("cards-elements");
+
+      const cardImage = document.createElement("img");
+      cardImage.classList.add("card-image");
+      cardImage.innerHTML = `<img src=${plant.url} alt=${plant.name} />`;
+
+      const cardName = document.createElement("span");
+      cardName.classList.add("product-name");
+      cardName.innerHTML = `<span>${plant.name}</span>`;
+
+      const cardPrice = document.createElement("span");
+      cardPrice.classList.add("price");
+      cardPrice.innerHTML = `<span>${plant.price}</span>`;
+
+      cardsElement.appendChild(cardImage);
+      cardsElement.appendChild(cardName);
+      cardsElement.appendChild(cardPrice);
+    });
+
+  return filteredSelectWateringcan;
 }
