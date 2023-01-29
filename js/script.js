@@ -149,3 +149,37 @@ function init() {
   document.querySelector(".results").style.display = "none";
 }
 */
+
+function filterSelectSun() {
+  const filteredSelectSun = plantsOfAvailable
+    .filter((s) => s.sun === valueSelectSun)
+    .map((plant) => {
+      const listProducts = document.querySelector(".list-products");
+
+      const products = document.createElement("li");
+      listProducts.appendChild(products);
+      products.classList.add("products");
+
+      const cardElement = document.createElement("div");
+      products.appendChild(cardElement);
+      cardElement.classList.add("cards-elements");
+
+      const cardImage = document.createElement("img");
+      cardImage.classList.add("card-image");
+      cardImage.innerHTML = `<img src=${plant.url} alt=${plant.name} />`;
+
+      const cardName = document.createElement("span");
+      cardName.classList.add("product-name");
+      cardName.innerHTML = `<span>${plant.name}</span>`;
+
+      const cardPrice = document.createElement("span");
+      cardPrice.classList.add("price");
+      cardPrice.innerHTML = `<span>${plant.price}</span>`;
+
+      cardElement.appendChild(cardImage);
+      cardElement.appendChild(cardName);
+      cardElement.appendChild(cardPrice);
+    });
+
+  return filteredSelectSun;
+}
