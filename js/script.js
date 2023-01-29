@@ -15,7 +15,7 @@ const plantsOfAvailable = [
     water: "rarely",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/euphorbia-eritrea.png",
     price: 25,
-    toxicity: false,
+    toxicity: "false",
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const plantsOfAvailable = [
     water: "rarely",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/succulent-bowl.png",
     price: 30,
-    toxicity: false,
+    toxicity: "false",
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const plantsOfAvailable = [
     water: "rarely",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/bunny-ears-cacti.png",
     price: 20,
-    toxicity: false,
+    toxicity: "false",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const plantsOfAvailable = [
     water: "regularly",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/ficus-lyrata.png",
     price: 30,
-    toxicity: false,
+    toxicity: "false",
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const plantsOfAvailable = [
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/lucky-bamboo.png",
     water: "regularly",
     price: 15,
-    toxicity: false,
+    toxicity: "false",
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ const plantsOfAvailable = [
     water: "regularly",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/ponytail-palm.png",
     price: 50,
-    toxicity: false,
+    toxicity: "false",
   },
   {
     id: 7,
@@ -69,7 +69,7 @@ const plantsOfAvailable = [
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/pilea-peperomioides.png",
     water: "regularly",
     price: 50,
-    toxicity: true,
+    toxicity: "true",
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ const plantsOfAvailable = [
     water: "daily",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/calathea-triostar.png",
     price: 50,
-    toxicity: true,
+    toxicity: "true",
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ const plantsOfAvailable = [
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/monstera-deliciosa.png",
     water: "daily",
     price: 50,
-    toxicity: true,
+    toxicity: "true",
   },
 ];
 
@@ -109,6 +109,7 @@ selectPets.addEventListener("change", (event) => {
   valueSelectPets = event.target.value;
   console.log(valueSelectPets);
   //showAndHideDisplay();
+  filterSelectPets();
 });
 /*
 function showAndHideDisplay() {
@@ -136,7 +137,7 @@ function showAndHideDisplay() {
     results.style.display = "none";
   }
 
-  if (valueSelectPets === "true" || valueSelectPets === "false") {
+  if (valueSelectPets === "true" || valueSelectPets === ""false"") {
     footer.style.display = "none";
     results.style.display = "block";
   } else {
@@ -144,7 +145,6 @@ function showAndHideDisplay() {
     results.style.display = "none";
   }
 }
-
 
 function init() {
   document.querySelector(".results").style.display = "none";
@@ -217,4 +217,38 @@ function filterSelectWateringcan() {
     });
 
   return filteredSelectWateringcan;
+}
+
+function filterSelectPets() {
+  const filteredSelectPets = plantsOfAvailable
+    .filter((p) => p.toxicity === valueSelectPets)
+    .map((plant) => {
+      const listProducts = document.querySelector(".list-products");
+
+      const products = document.createElement("li");
+      listProducts.appendChild(products);
+      products.classList.add("products");
+
+      const cardsElement = document.createElement("div");
+      products.appendChild(cardsElement);
+      cardsElement.classList.add("cards-elements");
+
+      const cardImage = document.createElement("img");
+      cardImage.classList.add("card-image");
+      cardImage.innerHTML = `<img src=${plant.url} alt=${plant.name} />`;
+
+      const cardName = document.createElement("span");
+      cardName.classList.add("product-name");
+      cardName.innerHTML = `<span>${plant.name}</span>`;
+
+      const cardPrice = document.createElement("span");
+      cardPrice.classList.add("price");
+      cardPrice.innerHTML = `<span>${plant.price}</span>`;
+
+      cardsElement.appendChild(cardImage);
+      cardsElement.appendChild(cardName);
+      cardsElement.appendChild(cardPrice);
+    });
+
+  return filteredSelectPets;
 }
