@@ -92,6 +92,7 @@ const plantsOfAvailable = [
 ];
 
 selectSun.addEventListener("change", (event) => {
+  event.preventDefault();
   valueSelectSun = event.target.value;
   console.log(valueSelectSun);
   filterSelectSun();
@@ -99,6 +100,7 @@ selectSun.addEventListener("change", (event) => {
 });
 
 selectWateringcan.addEventListener("change", (event) => {
+  event.preventDefault();
   valueSelectWateringcan = event.target.value;
   console.log(valueSelectWateringcan);
   filterSelectWateringcan();
@@ -106,9 +108,11 @@ selectWateringcan.addEventListener("change", (event) => {
 });
 
 selectPets.addEventListener("change", (event) => {
+  event.preventDefault();
   valueSelectPets = event.target.value;
   console.log(valueSelectPets);
   filterSelectPets();
+  resultsSelectPets();
 });
 
 function filterSelectSun() {
@@ -233,6 +237,16 @@ function resultsSelectWateringcan() {
     valueSelectWateringcan === "daily" ||
     valueSelectWateringcan === "rarely"
   ) {
+    results.style.display = "block";
+    footer.style.display = "none";
+  } else {
+    results.style.display = "none";
+    footer.style.display = "block";
+  }
+}
+
+function resultsSelectPets() {
+  if (valueSelectPets === "true" || valueSelectPets === "false") {
     results.style.display = "block";
     footer.style.display = "none";
   } else {
