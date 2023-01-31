@@ -15,7 +15,7 @@ const plantsOfAvailable = [
     water: "rarely",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/euphorbia-eritrea.png",
     price: 25,
-    toxicity: "false",
+    toxicity: false,
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ const plantsOfAvailable = [
     water: "rarely",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/succulent-bowl.png",
     price: 30,
-    toxicity: "false",
+    toxicity: false,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const plantsOfAvailable = [
     water: "rarely",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/bunny-ears-cacti.png",
     price: 20,
-    toxicity: "false",
+    toxicity: false,
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ const plantsOfAvailable = [
     water: "regularly",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/ficus-lyrata.png",
     price: 30,
-    toxicity: "false",
+    toxicity: false,
   },
   {
     id: 5,
@@ -51,7 +51,7 @@ const plantsOfAvailable = [
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/lucky-bamboo.png",
     water: "regularly",
     price: 15,
-    toxicity: "false",
+    toxicity: false,
   },
   {
     id: 6,
@@ -60,7 +60,7 @@ const plantsOfAvailable = [
     water: "regularly",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/ponytail-palm.png",
     price: 50,
-    toxicity: "false",
+    toxicity: false,
   },
   {
     id: 7,
@@ -69,7 +69,7 @@ const plantsOfAvailable = [
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/pilea-peperomioides.png",
     water: "regularly",
     price: 50,
-    toxicity: "true",
+    toxicity: true,
   },
   {
     id: 8,
@@ -78,7 +78,7 @@ const plantsOfAvailable = [
     water: "daily",
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/calathea-triostar.png",
     price: 50,
-    toxicity: "true",
+    toxicity: true,
   },
   {
     id: 9,
@@ -87,69 +87,28 @@ const plantsOfAvailable = [
     url: "https://storage.googleapis.com/front-br-challenges.appspot.com/green-thumb-v2/plants/monstera-deliciosa.png",
     water: "daily",
     price: 50,
-    toxicity: "true",
+    toxicity: true,
   },
 ];
 
 selectSun.addEventListener("change", (event) => {
   valueSelectSun = event.target.value;
   console.log(valueSelectSun);
-  //showAndHideDisplay();
   filterSelectSun();
+  resultsSelectSun();
 });
 
 selectWateringcan.addEventListener("change", (event) => {
   valueSelectWateringcan = event.target.value;
   console.log(valueSelectWateringcan);
-  //showAndHideDisplay();
   filterSelectWateringcan();
 });
 
 selectPets.addEventListener("change", (event) => {
   valueSelectPets = event.target.value;
   console.log(valueSelectPets);
-  //showAndHideDisplay();
   filterSelectPets();
 });
-/*
-function showAndHideDisplay() {
-  if (
-    valueSelectSun === "no" ||
-    valueSelectSun === "low" ||
-    valueSelectSun === "high"
-  ) {
-    footer.style.display = "none";
-    results.style.display = "block";
-  } else {
-    footer.style.display = "block";
-    results.style.display = "none";
-  }
-
-  if (
-    valueSelectWateringcan === "regularly" ||
-    valueSelectWateringcan === "daily" ||
-    valueSelectWateringcan === "rarely"
-  ) {
-    footer.style.display = "none";
-    results.style.display = "block";
-  } else {
-    footer.style.display = "block";
-    results.style.display = "none";
-  }
-
-  if (valueSelectPets === "true" || valueSelectPets === ""false"") {
-    footer.style.display = "none";
-    results.style.display = "block";
-  } else {
-    footer.style.display = "block";
-    results.style.display = "none";
-  }
-}
-
-function init() {
-  document.querySelector(".results").style.display = "none";
-}
-*/
 
 function filterSelectSun() {
   const filteredSelectSun = plantsOfAvailable
@@ -221,7 +180,7 @@ function filterSelectWateringcan() {
 
 function filterSelectPets() {
   const filteredSelectPets = plantsOfAvailable
-    .filter((p) => p.toxicity === valueSelectPets)
+    .filter((p) => String(p.toxicity) === valueSelectPets)
     .map((plant) => {
       const listProducts = document.querySelector(".list-products");
 
@@ -251,4 +210,18 @@ function filterSelectPets() {
     });
 
   return filteredSelectPets;
+}
+
+function resultsSelectSun() {
+  if (
+    valueSelectSun === "no" ||
+    valueSelectSun === "low" ||
+    valueSelectSun === "high"
+  ) {
+    results.style.display = "block";
+    footer.style.display = "none";
+  } else {
+    results.style.display = "none";
+    footer.style.display = "block";
+  }
 }
