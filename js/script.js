@@ -3,6 +3,9 @@ const selectWateringcan = document.querySelector(".second-select");
 const selectPets = document.querySelector(".third-select");
 const footer = document.querySelector("footer");
 const results = document.querySelector(".results");
+const sun = document.querySelector("#select-sun");
+const water = document.querySelector("#select-wateringcan");
+const pets = document.querySelector("#select-pets");
 let valueSelectSun;
 let valueSelectWateringcan;
 let valueSelectPets;
@@ -92,11 +95,14 @@ const plantsOfAvailable = [
 ];
 
 selectSun.addEventListener("change", (event) => {
-  event.preventDefault();
   valueSelectSun = event.target.value;
   console.log(valueSelectSun);
   filterSelectSun();
   resultsSelectSun();
+
+  setTimeout(() => {
+    sun.value = "";
+  }, 3000);
 });
 
 selectWateringcan.addEventListener("change", (event) => {
@@ -105,6 +111,10 @@ selectWateringcan.addEventListener("change", (event) => {
   console.log(valueSelectWateringcan);
   filterSelectWateringcan();
   resultsSelectWateringcan();
+
+  setTimeout(() => {
+    water.value = "";
+  }, 3000);
 });
 
 selectPets.addEventListener("change", (event) => {
@@ -113,6 +123,10 @@ selectPets.addEventListener("change", (event) => {
   console.log(valueSelectPets);
   filterSelectPets();
   resultsSelectPets();
+
+  setTimeout(() => {
+    pets.value = "";
+  }, 3000);
 });
 
 function filterSelectSun() {
