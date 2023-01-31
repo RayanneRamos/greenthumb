@@ -1,63 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
-  <title>greenthumb</title>
-</head>
-<body>
-  <div id="app">
-    <header>
-      <div>
-        <img class="logo" src="./assets/images/logo.png" alt="logo" />
-        <h1 class="title">Find your <br /> next green <br /> friend</h1>
-        <img class="icon" src="./assets/images/arrow.png" alt="arrow" />
-      </div>
-    </header>
-    <main>
-      <section class="selects">
-        <div class="first-select">
-          <img src="./assets/images/sun.png" alt="sun" />
-          <p>1. Set the amount of <strong>sunlight</strong> your plant will get</p>
-          <select name="select" id="select-sun">
-            <option value="">Select...</option>
-            <option value="no">no</option>
-            <option value="low">low</option>
-            <option value="high">high</option>
-          </select>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>greenthumb</title>
+  </head>
+  <body>
+    <div id="app">
+      <header>
+        <div>
+          <img class="logo" src="./assets/images/logo.png" alt="logo" />
+          <h1 class="title">
+            Find your <br />
+            next green <br />
+            friend
+          </h1>
+          <img class="icon" src="./assets/images/arrow.png" alt="arrow" />
         </div>
-        <div class="second-select">
-          <img src="./assets/images/wateringcan.png" alt="wateringcan" />
-          <p>2. How often do you want to <strong>water</strong> your plant?</p>
-          <select name="select" id="select-wateringcan">
-            <option value="">Select...</option>
-            <option value="regularly">regularly</option>
-            <option value="daily">daily</option>
-            <option value="rarely">rarely</option>
-          </select>
-        </div>
-        <div class="third-select">
-          <img src="./assets/images/dog.png" alt="dog" />
-          <p>3. Do you have pets? Do they <strong>chew</strong> plants?</p>
-          <select name="select" id="select-pets">
-            <option value="">Select...</option>
-            <option value="true">true</option>
-            <option value="false">false</option>
-          </select>
-        </div>
-      </section>
-      <section class="results">
-        <div class="results-cards">
-          <img class="pick" src="./assets/images/pick.png" alt="pick" />
-          <h1 class="results-title">Our picks for you</h1>
-          <div class="cards">
-            <ul class="list-products">
-              <!--
+      </header>
+      <main>
+        <section class="selects">
+          <div class="first-select">
+            <img src="./assets/images/sun.png" alt="sun" />
+            <p>
+              1. Set the amount of <strong>sunlight</strong> your plant will get
+            </p>
+            <select name="select" id="select-sun">
+              <option value="">Select...</option>
+              <option value="no">no</option>
+              <option value="low">low</option>
+              <option value="high">high</option>
+            </select>
+          </div>
+          <div class="second-select">
+            <img src="./assets/images/wateringcan.png" alt="wateringcan" />
+            <p>
+              2. How often do you want to <strong>water</strong> your plant?
+            </p>
+            <select name="select" id="select-wateringcan">
+              <option value="">Select...</option>
+              <option value="regularly">regularly</option>
+              <option value="daily">daily</option>
+              <option value="rarely">rarely</option>
+            </select>
+          </div>
+          <div class="third-select">
+            <img src="./assets/images/dog.png" alt="dog" />
+            <p>3. Do you have pets? Do they <strong>chew</strong> plants?</p>
+            <select name="select" id="select-pets">
+              <option value="">Select...</option>
+              <option value="true">true</option>
+              <option value="false">false</option>
+            </select>
+          </div>
+        </section>
+        <section class="results results-items">
+          <div class="results-cards">
+            <img class="pick" src="./assets/images/pick.png" alt="pick" />
+            <h1 class="results-title">Our picks for you</h1>
+            <div class="cards">
+              <ul class="list-products">
+                <!--
               <li class="products">
                 <div class="cards-elements">
                   <img class="card-image" src="./assets/plants/euphorbia-eritrea.png" alt="euphorbia-eritrea" />
@@ -107,22 +118,28 @@
                   <span class="price">$35</span>
                 </div>
               </li>
-              -->
-            </ul>
+              --></ul>
+            </div>
           </div>
-        </div>
-      </section>
-      <footer>
-        <div class="no-results">
-          <div class="info">
-            <h1 class="info-title">No results yet...</h1>
-            <p>Use the filters above to find the plant that best fits your environment :)</p>
+        </section>
+        <footer>
+          <div class="no-results">
+            <div class="info">
+              <h1 class="info-title">No results yet...</h1>
+              <p>
+                Use the filters above to find the plant that best fits your
+                environment :)
+              </p>
+            </div>
+            <img
+              class="no-image"
+              src="./assets/images/no-results.png"
+              alt="no-results"
+            />
           </div>
-          <img class="no-image" src="./assets/images/no-results.png" alt="no-results" />
-        </div>
-      </footer>
-    </main>
-  </div>
-  <script src="./js/script.js"></script>
-</body>
+        </footer>
+      </main>
+    </div>
+    <script src="./js/script.js"></script>
+  </body>
 </html>
