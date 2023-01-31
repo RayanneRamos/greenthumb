@@ -102,6 +102,7 @@ selectWateringcan.addEventListener("change", (event) => {
   valueSelectWateringcan = event.target.value;
   console.log(valueSelectWateringcan);
   filterSelectWateringcan();
+  resultsSelectWateringcan();
 });
 
 selectPets.addEventListener("change", (event) => {
@@ -217,6 +218,20 @@ function resultsSelectSun() {
     valueSelectSun === "no" ||
     valueSelectSun === "low" ||
     valueSelectSun === "high"
+  ) {
+    results.style.display = "block";
+    footer.style.display = "none";
+  } else {
+    results.style.display = "none";
+    footer.style.display = "block";
+  }
+}
+
+function resultsSelectWateringcan() {
+  if (
+    valueSelectWateringcan === "regularly" ||
+    valueSelectWateringcan === "daily" ||
+    valueSelectWateringcan === "rarely"
   ) {
     results.style.display = "block";
     footer.style.display = "none";
