@@ -6,9 +6,9 @@ const results = document.querySelector(".results");
 const sun = document.querySelector("#select-sun");
 const water = document.querySelector("#select-wateringcan");
 const pets = document.querySelector("#select-pets");
-let valueSelectSun;
-let valueSelectWateringcan;
-let valueSelectPets;
+let valueSelectSun = null;
+let valueSelectWateringcan = null;
+let valueSelectPets = null;
 
 const plantsOfAvailable = [
   {
@@ -130,11 +130,12 @@ selectPets.addEventListener("change", (event) => {
 });
 
 function filterSelectSun() {
+  const listProducts = document.querySelector(".list-products");
+  listProducts.innerHTML = "";
+
   const filteredSelectSun = plantsOfAvailable
     .filter((s) => s.sun === valueSelectSun)
     .map((plant) => {
-      const listProducts = document.querySelector(".list-products");
-
       const products = document.createElement("li");
       listProducts.appendChild(products);
       products.classList.add("products");
@@ -164,11 +165,12 @@ function filterSelectSun() {
 }
 
 function filterSelectWateringcan() {
+  const listProducts = document.querySelector(".list-products");
+  listProducts.innerHTML = "";
+
   const filteredSelectWateringcan = plantsOfAvailable
     .filter((w) => w.water === valueSelectWateringcan)
     .map((plant) => {
-      const listProducts = document.querySelector(".list-products");
-
       const products = document.createElement("li");
       listProducts.appendChild(products);
       products.classList.add("products");
@@ -198,11 +200,12 @@ function filterSelectWateringcan() {
 }
 
 function filterSelectPets() {
+  const listProducts = document.querySelector(".list-products");
+  listProducts.innerHTML = "";
+
   const filteredSelectPets = plantsOfAvailable
     .filter((p) => String(p.toxicity) === valueSelectPets)
     .map((plant) => {
-      const listProducts = document.querySelector(".list-products");
-
       const products = document.createElement("li");
       listProducts.appendChild(products);
       products.classList.add("products");
