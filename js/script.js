@@ -96,7 +96,6 @@ const plantsOfAvailable = [
 
 selectSun.addEventListener("change", (event) => {
   valueSelectSun = event.target.value;
-  console.log(valueSelectSun);
   filterSelectSun();
   resultsSelectSun();
 
@@ -108,7 +107,6 @@ selectSun.addEventListener("change", (event) => {
 selectWateringcan.addEventListener("change", (event) => {
   event.preventDefault();
   valueSelectWateringcan = event.target.value;
-  console.log(valueSelectWateringcan);
   filterSelectWateringcan();
   resultsSelectWateringcan();
 
@@ -120,7 +118,6 @@ selectWateringcan.addEventListener("change", (event) => {
 selectPets.addEventListener("change", (event) => {
   event.preventDefault();
   valueSelectPets = event.target.value;
-  console.log(valueSelectPets);
   filterSelectPets();
   resultsSelectPets();
 
